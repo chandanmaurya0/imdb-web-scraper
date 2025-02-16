@@ -13,7 +13,7 @@ from selenium.webdriver.chrome.options import Options
 import time
 import logging
 
-PAGINATION_LIMIT = 0  # Set the number of times to click "Load More" button
+PAGINATION_LIMIT = 20  # Set the number of times to click "Load More" button
 
 # Set up logging
 logger = logging.getLogger("scrape_imdb")
