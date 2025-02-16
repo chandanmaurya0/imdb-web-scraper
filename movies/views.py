@@ -17,12 +17,13 @@ def get_movies(request):
     List all the movies with optional filters
     """
 
-    # Get genre from the query params
+    # Get genre and limit from the query params
     genre = request.query_params.get("genre", None)
+    limit = int(request.query_params.get("limit", 100))
     if genre:
-        movies = Movie.objects.filter(genre=genre)
+        movies = Movie.objects.filter(genre=genre)[:limit]
     else:
-        movies = Movie.objects.all()
+        movies = Movie.objects.all()[:limit]
 
     serializer = MovieSerializer(movies, many=True)
     return JsonResponse(serializer.data, safe=False)
