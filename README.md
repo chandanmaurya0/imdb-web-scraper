@@ -66,3 +66,10 @@ python manage.py scrape_imdb --genre comedy --keyword fight
 
 ## Logging
 Logs are stored in the `logs/imdb_api.log` file.
+
+## Running Test Cases
+
+To run the test cases, use the following command:
+```sh
+python manage.py test
+```
